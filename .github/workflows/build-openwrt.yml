@@ -59,6 +59,16 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        ######################
+        rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
+        git clone https://gitee.com/zprion/lede-20200416.git openwrt/target/linux/ar71xx/image/test
+        cd openwrt/target/linux/ar71xx/image/test
+        mv tiny-tp-link.mk ..
+        cd 
+        ##############
+        git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git openwrt/package/mentohust
+        git clone https://github.com/BoringCat/luci-app-mentohust.git openwrt/package/luci-app-mentohust
+        
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Load custom feeds
       run: |
@@ -85,7 +95,14 @@ jobs:
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-
+##########
+    - name: Upload config directory
+      uses: actions/upload-artifact@main
+      if:  env.UPLOAD_BIN_DIR == 'true'
+      with:
+        name: OpenWrt_config${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        path: openwrt
+          
     - name: Download package
       id: package
       run: |
