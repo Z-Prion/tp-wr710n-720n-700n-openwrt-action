@@ -61,6 +61,8 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ######################
         rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
+        rm -rf openwrt/package/network/utils/iproute2/Makefile
+        git clone https://gitee.com/zprion/libcap.git openwrt/package/network/utils/iproute2
         git clone https://gitee.com/zprion/lede-20200416.git openwrt/target/linux/ar71xx/image/test
         git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
         cd openwrt/target/linux/ar71xx/image/test
