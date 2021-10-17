@@ -63,13 +63,16 @@ jobs:
         git clone https://gitee.com/zprion/pcre.git openwrt/package/libs/pcre
         rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
         rm -rf openwrt/package/network/utils/iproute2/Makefile
+        rm -rf openwrt/include/target.mk
         git clone https://gitee.com/zprion/libcap.git openwrt/package/network/utils/iproute2/test
         mv openwrt/package/network/utils/iproute2/test/Makefile  openwrt/package/network/utils/iproute2
         git clone https://gitee.com/zprion/lede-20200416.git openwrt/target/linux/ar71xx/image/test
         git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
+        mv openwrt/package/libs/libcap/target.mk openwrt/include
         cd openwrt/target/linux/ar71xx/image/test
         mv tiny-tp-link.mk ..
         cd 
+        
         ##############
         git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git openwrt/package/mentohust
         git clone https://github.com/BoringCat/luci-app-mentohust.git openwrt/package/luci-app-mentohust
