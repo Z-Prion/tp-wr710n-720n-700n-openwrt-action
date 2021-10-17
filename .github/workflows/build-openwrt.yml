@@ -60,6 +60,7 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ######################
+        git clone https://gitee.com/zprion/pcre.git openwrt/package/libs/pcre
         rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
         rm -rf openwrt/package/network/utils/iproute2/Makefile
         git clone https://gitee.com/zprion/libcap.git openwrt/package/network/utils/iproute2/test
