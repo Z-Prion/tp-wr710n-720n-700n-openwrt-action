@@ -62,6 +62,7 @@ jobs:
         ######################
         rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
         git clone https://gitee.com/zprion/lede-20200416.git openwrt/target/linux/ar71xx/image/test
+        git clone https://gitee.com/zprion/git-libcap.git openwrt/target/libs
         cd openwrt/target/linux/ar71xx/image/test
         mv tiny-tp-link.mk ..
         cd 
