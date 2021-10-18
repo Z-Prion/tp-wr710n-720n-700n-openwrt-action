@@ -104,12 +104,13 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
 
-   # - name: moving config directory
-   #   working-directory: /workdir
-   #   run: |
-   #     cd openwrt
-   #     mkdir cconfig
-   #     cp .config cconfig
+    - name: moving config directory
+      working-directory: /workdir
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+      run: |
+        cd openwrt
+        mkdir cconfig
+        cp .config cconfig
         
     - name: Upload config directory
       uses: actions/upload-artifact@main
