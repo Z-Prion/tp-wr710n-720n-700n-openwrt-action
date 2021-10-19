@@ -6,7 +6,6 @@
 ![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
 
-A template for building OpenWrt with GitHub Actions
 自定义的tplink-wr886n路由器openwrt固件在线编译程序
 使用源码为lede的20200416 tags源码，开启helloworld，包含ssr zerotier mentohust，适合高校锐捷验证
 注意！注意！注意！ 固件需搭配16m内存使用，886n硬改为16m+64m。
