@@ -66,16 +66,16 @@ jobs:
         rm -rf openwrt/package/network/utils/iproute2/Makefile
         rm -rf openwrt/include/target.mk
         rm -rf openwrt/package/libs/nettle        
-        rm -rf openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
-        rm -rf openwrt/package/base-files/files/etc/board.d/99-default_network
-        rm -rf openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c        
+        # rm -rf openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
+        # rm -rf openwrt/package/base-files/files/etc/board.d/99-default_network
+        # rm -rf openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c        
         git clone https://gitee.com/zprion/nettle.git openwrt/package/libs/nettle
         git clone https://gitee.com/zprion/libcap.git openwrt/package/network/utils/iproute2/test
         mv openwrt/package/network/utils/iproute2/test/Makefile  openwrt/package/network/utils/iproute2
         git clone https://gitee.com/zprion/lede-20200416.git openwrt/target/linux/ar71xx/image/test
-        cp openwrt/target/linux/ar71xx/image/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
-        cp openwrt/target/linux/ar71xx/image/test/99-default_network openwrt/package/base-files/files/etc/board.d/99-default_network
-        cp openwrt/target/linux/ar71xx/image/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c
+        # cp openwrt/target/linux/ar71xx/image/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
+        # cp openwrt/target/linux/ar71xx/image/test/99-default_network openwrt/package/base-files/files/etc/board.d/99-default_network
+        # cp openwrt/target/linux/ar71xx/image/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c
         git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
         mv openwrt/package/libs/libcap/target.mk openwrt/include
         cd openwrt/target/linux/ar71xx/image/test
