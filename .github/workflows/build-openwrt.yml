@@ -76,7 +76,7 @@ jobs:
         # cp openwrt/target/linux/ar71xx/image/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d
         # cp openwrt/target/linux/ar71xx/image/test/99-default_network openwrt/package/base-files/files/etc/board.d
         # cp openwrt/target/linux/ar71xx/image/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79
-        # git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
+        git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
         # mv openwrt/package/libs/libcap/target.mk openwrt/include
         cd openwrt/target/linux/ar71xx/image/test
         mv tiny-tp-link.mk ..
