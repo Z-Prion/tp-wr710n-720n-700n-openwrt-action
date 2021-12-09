@@ -24,7 +24,7 @@ env:
   REPO_BRANCH: 20200416
   # master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: wr802n.config
+  CONFIG_FILE: 1234.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
@@ -61,23 +61,23 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git openwrt/package/mentohust
         git clone https://github.com/BoringCat/luci-app-mentohust.git openwrt/package/luci-app-mentohust
-        git clone https://gitee.com/zprion/pcre.git openwrt/package/libs/pcre
+        # git clone https://gitee.com/zprion/pcre.git openwrt/package/libs/pcre
         rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
-        rm -rf openwrt/package/network/utils/iproute2/Makefile
-        rm -rf openwrt/include/target.mk
-        rm -rf openwrt/package/libs/nettle        
-        rm -rf openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
-        rm -rf openwrt/package/base-files/files/etc/board.d/99-default_network
-        rm -rf openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c        
+        # rm -rf openwrt/package/network/utils/iproute2/Makefile
+        # rm -rf openwrt/include/target.mk
+        # rm -rf openwrt/package/libs/nettle        
+        # rm -rf openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
+        # rm -rf openwrt/package/base-files/files/etc/board.d/99-default_network
+        # rm -rf openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c        
         git clone https://gitee.com/zprion/nettle.git openwrt/package/libs/nettle
         git clone https://gitee.com/zprion/libcap.git openwrt/package/network/utils/iproute2/test
-        mv openwrt/package/network/utils/iproute2/test/Makefile  openwrt/package/network/utils/iproute2
+        # mv openwrt/package/network/utils/iproute2/test/Makefile  openwrt/package/network/utils/iproute2
         git clone https://gitee.com/zprion/lede-20200416.git openwrt/target/linux/ar71xx/image/test
-        cp openwrt/target/linux/ar71xx/image/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d
-        cp openwrt/target/linux/ar71xx/image/test/99-default_network openwrt/package/base-files/files/etc/board.d
-        cp openwrt/target/linux/ar71xx/image/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79
-        git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
-        mv openwrt/package/libs/libcap/target.mk openwrt/include
+        # cp openwrt/target/linux/ar71xx/image/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d
+        # cp openwrt/target/linux/ar71xx/image/test/99-default_network openwrt/package/base-files/files/etc/board.d
+        # cp openwrt/target/linux/ar71xx/image/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79
+        # git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
+        m# v openwrt/package/libs/libcap/target.mk openwrt/include
         cd openwrt/target/linux/ar71xx/image/test
         mv tiny-tp-link.mk ..
         cd
