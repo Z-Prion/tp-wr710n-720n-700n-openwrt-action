@@ -21,8 +21,7 @@ on:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
-  REPO_BRANCH: 20200416
-  # master
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 1234.config
   DIY_P1_SH: diy-part1.sh
@@ -76,7 +75,7 @@ jobs:
         # cp openwrt/target/linux/ar71xx/image/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d
         # cp openwrt/target/linux/ar71xx/image/test/99-default_network openwrt/package/base-files/files/etc/board.d
         # cp openwrt/target/linux/ar71xx/image/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79
-        git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
+        # git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
         # mv openwrt/package/libs/libcap/target.mk openwrt/include
         cd openwrt/target/linux/ar71xx/image/test
         mv tiny-tp-link.mk ..
