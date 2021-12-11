@@ -20,8 +20,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede.git
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/Z-Prion/wr802n-v1-openwrt.git
+  REPO_BRANCH: lede-17.01
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 1234.config
   DIY_P1_SH: diy-part1.sh
@@ -61,7 +61,7 @@ jobs:
         git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git openwrt/package/mentohust
         git clone https://github.com/BoringCat/luci-app-mentohust.git openwrt/package/luci-app-mentohust
         # git clone https://gitee.com/zprion/pcre.git openwrt/package/libs/pcre
-        rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
+        # rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
         # rm -rf openwrt/package/network/utils/iproute2/Makefile
         # rm -rf openwrt/include/target.mk
         # rm -rf openwrt/package/libs/nettle        
@@ -71,15 +71,15 @@ jobs:
         # git clone https://gitee.com/zprion/nettle.git openwrt/package/libs/nettle
         # git clone https://gitee.com/zprion/libcap.git openwrt/package/network/utils/iproute2/test
         # mv openwrt/package/network/utils/iproute2/test/Makefile  openwrt/package/network/utils/iproute2
-        git clone https://gitee.com/zprion/lede-20200416.git openwrt/target/linux/ar71xx/image/test
+        # git clone https://gitee.com/zprion/lede-20200416.git openwrt/target/linux/ar71xx/image/test
         # cp openwrt/target/linux/ar71xx/image/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d
         # cp openwrt/target/linux/ar71xx/image/test/99-default_network openwrt/package/base-files/files/etc/board.d
         # cp openwrt/target/linux/ar71xx/image/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79
         # git clone https://gitee.com/zprion/git-libcap.git openwrt/package/libs/libcap
         # mv openwrt/package/libs/libcap/target.mk openwrt/include
-        cd openwrt/target/linux/ar71xx/image/test
-        mv tiny-tp-link.mk ..
-        cd
+        # cd openwrt/target/linux/ar71xx/image/test
+        # mv tiny-tp-link.mk ..
+        # cd
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         
     - name: Load custom feeds
