@@ -60,6 +60,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git openwrt/package/mentohust
         git clone https://github.com/BoringCat/luci-app-mentohust.git openwrt/package/luci-app-mentohust
+        git clone https://github.com/kongfl888/luci-app-adguardhome.git openwrt/package/luci-app-adguardhome
         # git clone https://gitee.com/zprion/pcre.git openwrt/package/libs/pcre
         # rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
         # rm -rf openwrt/package/network/utils/iproute2/Makefile
