@@ -20,8 +20,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/openwrt.git
-  REPO_BRANCH: lede-17.01
+  REPO_URL: https://github.com/coolsnowwolf/lede.git
+  REPO_BRANCH: 20200915
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: wr710n.config
   DIY_P1_SH: diy-part1.sh
@@ -61,18 +61,17 @@ jobs:
         git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git openwrt/package/mentohust
         git clone https://github.com/BoringCat/luci-app-mentohust.git openwrt/package/luci-app-mentohust
         git clone https://github.com/kongfl888/luci-app-adguardhome.git openwrt/package/luci-app-adguardhome
-        git clone https://github.com/pymumu/smartdns.git openwrt/package/smartdns
-        rm -rf openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
-        rm -rf openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c
+        # rm -rf openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
+        # rm -rf openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c
         # rm -rf openwrt/package/base-files/files/etc/board.d/99-default_network
         rm -rf openwrt/target/linux/ar71xx/image/tiny-tp-link.mk
-        rm -rf openwrt/target/linux/ar71xx/config-4.14
-        git clone https://github.com/Z-Prion/openwrt-19.07-file.git openwrt/test
-        cp openwrt/test/tiny-tp-link.mk openwrt/target/linux/ar71xx/image
-        cp openwrt/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d
-        cp openwrt/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79
+        # rm -rf openwrt/target/linux/ar71xx/config-4.14
+        git clone https://github.com/Z-Prion/wr720n-710n-700n-lede-file.git openwrt/test
+        cp openwrt/test/20200915/tiny-tp-link.mk openwrt/target/linux/ar71xx/image
+        # cp openwrt/test/02_network openwrt/target/linux/ar71xx/base-files/etc/board.d
+        # cp openwrt/test/mach-tl-wr802n.c openwrt/target/linux/ar71xx/files/arch/mips/ath79
         # cp openwrt/test/99-default_network openwrt/package/base-files/files/etc/board.d
-        cp openwrt/test/config-4.14 openwrt/target/linux/ar71xx
+        # cp openwrt/test/config-4.14 openwrt/target/linux/ar71xx
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         
     - name: Load custom feeds
