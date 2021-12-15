@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: 20200416
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: wr710n.config
+  CONFIG_FILE: 20200415.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
