@@ -64,7 +64,7 @@ jobs:
         git clone https://github.com/kongfl888/luci-app-adguardhome.git openwrt/package/luci-app-adguardhome
         rm -rf openwrt/target/linux/ramips/image/mt7621.mk
         git clone https://github.com/Z-Prion/wr720n-710n-700n-lede-file.git openwrt/test
-        cp openwrt/test/8820v2/mt7961.mk openwrt/target/linux/ramips/image
+        cp openwrt/test/8820v2/mt7621.mk openwrt/target/linux/ramips/image
         # rm -rf openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
         # rm -rf openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c
         # rm -rf openwrt/target/linux/ramips/image/mt7621.mk
