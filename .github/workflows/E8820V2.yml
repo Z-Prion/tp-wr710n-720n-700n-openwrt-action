@@ -20,13 +20,12 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/openwrt/openwrt.git
+  REPO_BRANCH: openwrt-19.07
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: e8820v2.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  PATCH_SH: patch-e8820v2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -62,11 +61,14 @@ jobs:
         git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git openwrt/package/mentohust
         git clone https://github.com/BoringCat/luci-app-mentohust.git openwrt/package/luci-app-mentohust
         git clone https://github.com/kongfl888/luci-app-adguardhome.git openwrt/package/luci-app-adguardhome
-        rm -rf openwrt/target/linux/ramips/image/mt7621.mk
+        rm -rf openwrt/target/linux/ramips/image/mt7621.mk        
+        rm -rf openwrt/target/linux/ramips/base-files/etc/board.d/02_network
+        rm -rf openwrt/target/linux/ramips/base-files/etc/board.d/01_leds
         git clone https://github.com/Z-Prion/wr720n-710n-700n-lede-file.git openwrt/test
         cp openwrt/test/8820v2/mt7621.mk openwrt/target/linux/ramips/image
-        # rm -rf openwrt/target/linux/ar71xx/base-files/etc/board.d/02_network
-        # rm -rf openwrt/target/linux/ar71xx/files/arch/mips/ath79/mach-tl-wr802n.c
+        cp openwrt/test/8820v2/02_network openwrt/target/linux/ramipsbase-files/etc/board.d
+        cp openwrt/test/8820v2/01_leds openwrt/target/linux/ramips/base-files/etc/board.d
+        cp openwrt/test/8820v2/mt7621_zte_e8820v2.dts openwrt//target/linux/ramips/dts
         # rm -rf openwrt/target/linux/ramips/image/mt7621.mk
         # rm -rf openwrt/target/linux/ar71xx/config-4.14
         # git clone https://github.com/Z-Prion/wr720n-710n-700n-lede-file.git openwrt/test
